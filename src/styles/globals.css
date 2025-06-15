@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========= Custom Animations ========= */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ========= Tailwind Component Layers ========= */
+@layer components {
+  .btn-primary {
+    @apply bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-medium transition-all;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500;
+  }
+}
+
+/* ========= Smooth Scrolling ========= */
+html {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #988d8d transparent;
+}
+
+/* ========= Scrollbar Styling (Chrome, Safari, Edge) ========= */
+::-webkit-scrollbar {
+  width: 2%;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Hides background track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d82e2e;  /* Thumb color */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b82525;
+}
+
+/* ========= Navigation Link Underline ========= */
+.nav-link-underline {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background-color: #e11d48;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.group:hover .nav-link-underline {
+  transform: scaleX(1);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
