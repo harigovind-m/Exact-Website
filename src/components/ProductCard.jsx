@@ -29,7 +29,7 @@ export default function ProductCard({ product, index }) {
       className="block"
     >
       <motion.div
-        className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-md overflow-hidden hover:shadow-xl transition-all duration-150 flex flex-col max-w-xs h-[430px]"
+        className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-md overflow-hidden hover:shadow-xl transition-all duration-150 flex flex-col w-full max-w-[260px] sm:max-w-xs h-[400px] sm:h-[430px] mx-auto"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
