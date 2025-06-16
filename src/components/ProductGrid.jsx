@@ -3,21 +3,25 @@ import ProductCard from "./ProductCard";
 import LoadingSpinner from "./LoadingSpinner";
 import products from "../data/products";
 
-export default function ProductGrid() {
+export default function ProductGrid({ title }) {
   const isLoading = false;
   const error = null;
 
   return (
     <section className="py-16 bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="container mx-auto px-6">
-        <motion.h2
-          className="text-4xl font-bold text-center text-white mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Our Products
-        </motion.h2>
+
+        {/* Only show title if passed */}
+        {title && (
+          <motion.h2
+            className="text-4xl font-bold text-center text-white mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {title}
+          </motion.h2>
+        )}
 
         {isLoading && <LoadingSpinner />}
 
