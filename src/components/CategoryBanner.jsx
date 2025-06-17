@@ -39,7 +39,7 @@ export default function CategoryBanner({ selectedCategory }) {
 
 
 
-          <style jsx>{`
+          <style>{`
             @keyframes strip {
                 0% {
                 transform: translateX(0%);

@@ -10,8 +10,6 @@ export default function ProductGrid({ title }) {
   return (
     <section className="py-16 bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="container mx-auto px-6">
-
-        {/* Only show title if passed */}
         {title && (
           <motion.h2
             className="text-4xl font-bold text-center text-white mb-12"
@@ -36,7 +34,7 @@ export default function ProductGrid({ title }) {
         )}
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto justify-center"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 max-w-7xl mx-auto"
           initial="hidden"
           animate="visible"
           variants={{

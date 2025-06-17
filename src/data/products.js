@@ -4,6 +4,7 @@ export default [
     name: "LG PuriCare 360 Air Purifier",
     image: "/images/products/EX-20.jpg",
     description: "360° air purification with dual fans",
+    cateogry: "Wellness",
     ecomLink: "https://rptech.qa/collections/lg/products/lg-as60ghwg0-puricare-360-air-purifier-hit-white-as60ghwg0"
   },
   {
@@ -11,6 +12,7 @@ export default [
     name: "Exact Buds Pro",
     image: "/images/products/EX-21.jpg",
     description: "The Exact Cyber Smart Watch is designed for modern",
+    cateogry: "Wellness",
     ecomLink: "https://rptech.qa/products/exact-1221-smart-watch?_pos=3&_sid=8906ff419&_ss=r"
   },
   {
@@ -18,6 +20,7 @@ export default [
     name: "Exact Buds",
     image: "/images/products/EX-1202.jpg",
     description: "Lorem Ipsum",
+    cateogry: "Wellness",
     ecomLink: "https://rptech.qa/products/exact-wireless-headset-tws-ex15?_pos=3&_sid=61d987e99&_ss=r"
   },
   {
@@ -25,6 +28,7 @@ export default [
     name: "Exact Buds",
     image: "/images/products/EX-1202.jpg",
     description: "Lorem Ipsum",
+    cateogry: "Electronics",
     ecomLink: "https://rptech.qa/products/exact-wireless-headset-tws-ex15?_pos=3&_sid=61d987e99&_ss=r"
   },
   {
@@ -32,6 +36,7 @@ export default [
     name: "Exact Buds",
     image: "/images/products/EX-1202.jpg",
     description: "Lorem Ipsum",
+    cateogry: "Electronics",
     ecomLink: "https://rptech.qa/products/exact-wireless-headset-tws-ex15?_pos=3&_sid=61d987e99&_ss=r"
   },
   {
@@ -39,6 +44,7 @@ export default [
     name: "Exact Buds",
     image: "/images/products/EX-1202.jpg",
     description: "Lorem Ipsum",
+    cateogry: "Electronics",
     ecomLink: "https://rptech.qa/products/exact-wireless-headset-tws-ex15?_pos=3&_sid=61d987e99&_ss=r"
   },
   {
@@ -46,6 +52,7 @@ export default [
     name: "Exact Buds",
     image: "/images/products/EX-1202.jpg",
     description: "Lorem Ipsum",
+    cateogry: "New Arrivals",
     ecomLink: "https://rptech.qa/products/exact-wireless-headset-tws-ex15?_pos=3&_sid=61d987e99&_ss=r"
   },
   {
@@ -53,6 +60,7 @@ export default [
     name: "Exact Buds",
     image: "/images/products/EX-1202.jpg",
     description: "Lorem Ipsum",
+    cateogry: "New Arrivals",
     ecomLink: "https://rptech.qa/products/exact-wireless-headset-tws-ex15?_pos=3&_sid=61d987e99&_ss=r"
   }
 ];

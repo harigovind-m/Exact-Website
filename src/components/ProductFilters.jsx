@@ -1,15 +1,36 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const categories = ["All Products", "Wellness", "Electronics", "New Arrivals", "Bundles"];
-const filters = ["Price: Low to High", "Price: High to Low", "Rating", "Most Popular"];
+const categories = [
+  "All Products",
+  "Wellness",
+  "Electronics",
+  "New Arrivals",
+  "Bundles"
+];
 
-export default function ProductFilters() {
+const filters = [
+  "Most Popular",         // default order (no sort)
+  "Price: Low to High",   // ascending price
+  "Price: High to Low",   // descending price
+  "Rating"                // descending rating
+];
+
+export default function ProductFilters({ setSelectedCategory, setSelectedFilter }) {
   const [activeCategory, setActiveCategory] = useState("All Products");
   const [activeFilter, setActiveFilter] = useState("Most Popular");
 
+  useEffect(() => {
+    setSelectedCategory(activeCategory);
+  }, [activeCategory, setSelectedCategory]);
+
+  useEffect(() => {
+    setSelectedFilter(activeFilter);
+  }, [activeFilter, setSelectedFilter]);
+
   return (
     <div className="mb-12">
+      {/* Category Filters */}
       <motion.div
         className="flex flex-wrap gap-2 mb-6"
         initial={{ opacity: 0 }}
@@ -33,6 +54,7 @@ export default function ProductFilters() {
         ))}
       </motion.div>
 
+      {/* Sort Filters */}
       <motion.div
         className="flex items-center flex-wrap gap-4"
         initial={{ opacity: 0 }}
