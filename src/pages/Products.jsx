@@ -9,18 +9,18 @@ import CategoryBanner from "../components/CategoryBanner";
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All Products");
   const [selectedFilter, setSelectedFilter] = useState("Most Popular");
-  const [filteredProducts, setFilteredProducts] = useState(productsData);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  // Filter products by category
+  // Filter and sort products
   useEffect(() => {
-    if (selectedCategory === "All Products") {
-      setFilteredProducts(productsData);
-    } else {
-      const filtered = productsData.filter(
-        (product) => product.category === selectedCategory
-      );
-      setFilteredProducts(filtered);
+    let result = [...productsData];
+    
+    // Filter by category
+    if (selectedCategory !== "All Products") {
+      result = result.filter(product => product.category === selectedCategory);
     }
+    
+    setFilteredProducts(result);
   }, [selectedCategory]);
 
   return (
@@ -39,18 +39,15 @@ export default function ProductsPage() {
         </div>
 
         <div className="max-w-8xl mx-auto sm:px-6 lg:px-8 py-8">
-{/* Category Banner */}
-        <CategoryBanner selectedCategory={selectedCategory} />
+          <CategoryBanner selectedCategory={selectedCategory} />
         </div>
 
-        {/* Main Content Area */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <ProductFilters
             setSelectedCategory={setSelectedCategory}
             setSelectedFilter={setSelectedFilter}
           />
 
-          {/* Products Grid */}
           <FilteredProductGrid
             products={filteredProducts}
             selectedFilter={selectedFilter}
