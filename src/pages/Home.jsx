@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <ProductGrid />
+        <ProductGrid title="Best Sellers 🎉" />
         <Features />
         <Testimonials />
       </main>

@@ -26,20 +26,20 @@ export default function ProductCard({ product, index }) {
       href={product.ecomLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="block"
+      className="block h-full group"
     >
       <motion.div
-        className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-md overflow-hidden hover:shadow-xl transition-all duration-150 flex flex-col max-w-xs h-[430px]"
+        className="bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl border border-white/20 shadow-md overflow-hidden hover:shadow-xl transition-all duration-150 flex flex-col w-full h-[280px] sm:h-[430px]"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Image */}
-        <div className="w-full aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
+        <div className="w-full aspect-square bg-gray-100 flex items-center justify-center overflow-hidden p-1 sm:p-0">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-125"
             onError={(e) => {
               e.target.src = "/placeholder-product.jpg";
             }}
@@ -47,14 +47,14 @@ export default function ProductCard({ product, index }) {
         </div>
 
         {/* Content */}
-        <div className="p-4 flex flex-col flex-grow justify-between">
+        <div className="p-2 sm:p-4 flex flex-col flex-grow justify-between">
           <div>
-            <h3 className="font-semibold text-sm text-white mb-1 truncate">
+            <h3 className="font-semibold text-xs sm:text-sm text-white mb-1 truncate">
               {product.name}
             </h3>
 
             {product.description && (
-              <p className="text-gray-400 text-xs mb-3 line-clamp-2 min-h-[32px]">
+              <p className="text-gray-400 text-[10px] sm:text-xs mb-3 line-clamp-2 min-h-[32px]">
                 {product.description}
               </p>
             )}
@@ -63,27 +63,30 @@ export default function ProductCard({ product, index }) {
           <div className="mt-auto">
             <div className="text-center mb-2">
               {isLoading ? (
-                <div className="h-4 w-20 mx-auto bg-gray-600 animate-pulse rounded"></div>
+                <div className="h-3 sm:h-4 w-16 sm:w-20 mx-auto bg-gray-600 animate-pulse rounded"></div>
               ) : price ? (
-                <span className="text-sm font-bold text-white">
+                <span className="text-xs sm:text-sm font-bold text-white">
                   {price.toLocaleString()} {currency}
                 </span>
               ) : (
-                <span className="text-xs text-gray-400">Price unavailable</span>
+                <span className="text-[10px] sm:text-xs text-gray-400">Price unavailable</span>
               )}
             </div>
 
             <div
-              className={`block w-full text-center py-2 text-xs font-semibold rounded transition duration-200 ${price
-                ? "bg-red-600 text-white hover:bg-red-700"
-                : "bg-blue-400 text-white cursor-pointer"
+              className={`block w-full text-center py-1 sm:py-2 text-[10px] sm:text-xs font-semibold rounded transition duration-200 ${
+                price
+                  ? "bg-red-600 text-white hover:bg-red-700"
+                  : "bg-blue-400 text-white cursor-pointer"
               }`}
             >
               {price ? "Buy Now" : "Check Price"}
             </div>
 
             {error && !isLoading && (
-              <p className="text-red-500 text-[10px] mt-2 text-center">{error}</p>
+              <p className="text-red-500 text-[9px] sm:text-[10px] mt-1 sm:mt-2 text-center">
+                {error}
+              </p>
             )}
           </div>
         </div>
