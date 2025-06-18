@@ -66,8 +66,8 @@ export default function FilteredProductGrid({ products = [], selectedFilter }) {
   });
 
   return (
-    <section className="py-6 bg-gradient-to-br from-gray-900 to-gray-800">
-      <div className="container px-6">
+    <section className="py-6">
+      <div className="container">
         {isLoading ? (
           <LoadingSpinner />
         ) : (
