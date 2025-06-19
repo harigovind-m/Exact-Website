@@ -1,19 +1,13 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-export default function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    // Scroll browser window
-    window.scrollTo(0, 0);
-
-    // Scroll custom scroll containers
-    const scrollContainers = document.querySelectorAll('[class*="overflow-y-scroll"]');
-    scrollContainers.forEach((el) => {
-      el.scrollTop = 0;
-    });
-  }, [pathname]);
-
-  return null;
+export default function LoadingSpinner() {
+  return (
+    <div className="flex justify-center items-center py-12">
+      <motion.div
+        className="w-10 h-10 border-4 border-red-600 border-t-transparent rounded-full"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+      />
+    </div>
+  );
 }
