@@ -105,15 +105,15 @@ export default function About() {
 
 const roadmapData = [
   {
-    title: "2020 – Our Vision Begins",
+    title: "2020 - Our Vision Begins",
     description: "Founded with a goal to bring wellness and technology together.",
   },
   {
-    title: "2021 – First Product Launch",
+    title: "2021 - First Product Launch",
     description: "We released our first line of lifestyle-enhancing gadgets.",
   },
   {
-    title: "2025 – Community First",
+    title: "2025 - Community First",
     description: "Built a strong community around balance, health, and tech.",
   },
 ];
