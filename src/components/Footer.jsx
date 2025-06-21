@@ -19,7 +19,7 @@ export default function Footer() {
 
   return (
     <motion.footer
-      className="bg-gray-900 text-white"
+      className="text-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
